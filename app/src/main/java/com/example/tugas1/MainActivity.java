@@ -20,8 +20,11 @@ public class MainActivity extends AppCompatActivity {
     private TextView textViewTotal;
     private ImageView imageView1, imageView2, imageView3;
 
-    private int itemPrice = 0;
-    private double discount = 0.1;
+    private int itemPrice;
+    private double discount;
+    private int admin;
+
+    private int finalPrice;
 
 
     @Override
@@ -55,24 +58,32 @@ public class MainActivity extends AppCompatActivity {
             return;
         } else if (selectedItem.equalsIgnoreCase("Bola Basket")) {
             itemPrice = 50000;
-            imageView1.setImageResource(R.drawable.bola_basket);
+            admin = 2000;
+            imageView1.setImageResource(R.drawable.basket);
         } else if (selectedItem.equalsIgnoreCase("Bola Voli")){
             itemPrice = 75000;
-            imageView2.setImageResource(R.drawable.bola_volley);
+            admin = 2500;
+            imageView2.setImageResource(R.drawable.volley);
         } else if (selectedItem.equalsIgnoreCase("Bola Futsal")) {
             itemPrice = 100000;
-            imageView3.setImageResource(R.drawable.bola_futsal);
+            admin = 3000;
+            imageView3.setImageResource(R.drawable.futsal);
         } else {
             Toast.makeText(this, "Invalid item", Toast.LENGTH_SHORT).show();
             return;
         }
 
-        double totalPrice = itemPrice;
+        int totalPrice = itemPrice + admin;
+
         if (radioButtonMember.isChecked()) {
-            totalPrice = itemPrice - (itemPrice * discount);
+            discount = itemPrice * 0.05;
+            finalPrice = totalPrice - (int)discount;
+        } else {
+            discount = 0;
+            finalPrice = totalPrice;
         }
 
-        textViewTotal.setText("Item: " + selectedItem + "\nPrice: " + itemPrice +
-                "\nTotal Price: " + totalPrice);
+        textViewTotal.setText("Item: " + selectedItem + " 1 pcs " + "\nPrice: Rp" + itemPrice + "\nAdmin : Rp" + admin +
+                "\nTotal Price : Rp" + totalPrice + "\nDiscount : Rp" + discount + "\nPay : Rp" + finalPrice);
     }
 }

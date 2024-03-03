@@ -41,7 +41,7 @@
             android:layout_height="100dp"
             android:contentDescription="Basket"
             android:layout_gravity="center"
-            android:src="@drawable/bola_basket"/>
+            android:src="@drawable/basket"/>
 
         <!-- Spasi antar gambar -->
         <View
@@ -55,7 +55,7 @@
             android:layout_height="90dp"
             android:contentDescription="Volley"
             android:layout_gravity="center"
-            android:src="@drawable/bola_volley" />
+            android:src="@drawable/volley" />
 
         <!-- Spasi antar gambar -->
         <View
@@ -69,7 +69,7 @@
             android:layout_height="100dp"
             android:contentDescription="Futsal"
             android:layout_gravity="center"
-            android:src="@drawable/bola_futsal" />
+            android:src="@drawable/futsal" />
 
     </LinearLayout>
 
@@ -84,7 +84,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="30dp"
-        android:text="Diskon10%"
+        android:text="Diskon5%"
         android:textColor="#B00020"
         android:textSize="18sp"
         android:textStyle="bold" />
@@ -116,15 +116,16 @@
         android:id="@+id/buttonProcess"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Total Bayar" />
+        android:text="Rincian Harga" />
 
     <TextView
         android:id="@+id/textViewTotal"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="28dp"
+        android:layout_height="200sp"
+        android:layout_marginTop="5dp"
         android:text=""
         android:textColor="#2A3136"
-        android:textSize="18sp" />
+        android:background="#BF8181"
+        android:textSize="20sp" />
 
 </LinearLayout>
